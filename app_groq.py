@@ -147,9 +147,7 @@ def stream_reply(client: OpenAI, model: str, messages: list[dict[str, str]]) -> 
 def reset_chat() -> None:
     """Hapus riwayat chat di session saat ini."""
     st.session_state.messages = []
-    st.rerun()
-
-
+   
 # =========================
 # Sidebar
 # =========================
