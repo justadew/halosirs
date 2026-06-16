@@ -1,5 +1,5 @@
 """
-MediBot - Chatbot Informasi RS Sehat Sentosa
+MediBot - Chatbot Informasi RSU Kota XYZ
 Streamlit + Groq API (OpenAI-compatible endpoint)
 
 Cara menjalankan lokal:
@@ -23,7 +23,7 @@ from openai import OpenAI
 # =========================
 # Konfigurasi aplikasi
 # =========================
-APP_TITLE = "MediBot — RS Sehat Sentosa"
+APP_TITLE = "MediBot — RSU Kota XYZ"
 APP_ICON = "🏥"
 GROQ_BASE_URL = "https://api.groq.com/openai/v1"
 DEFAULT_GROQ_MODEL = "llama-3.3-70b-versatile"
@@ -39,7 +39,7 @@ st.set_page_config(
 # =========================
 # Knowledge base / system prompt
 # =========================
-SYSTEM_PROMPT = """Kamu adalah MediBot, asisten virtual ramah untuk RS Sehat Sentosa, rumah sakit umum modern di Indonesia.
+SYSTEM_PROMPT = """Kamu adalah MediBot, asisten virtual ramah untuk RSU Kota XYZ, rumah sakit umum modern di Indonesia.
 
 Tugasmu memberi informasi yang jelas, hangat, dan akurat tentang:
 
@@ -62,7 +62,7 @@ Tugasmu memberi informasi yang jelas, hangat, dan akurat tentang:
 - drg. Rama Saputra — Gigi Umum
 
 **Pendaftaran**
-- Online via website/aplikasi RS Sehat Sentosa, WhatsApp 0811-2345-678, atau langsung di loket.
+- Online via website/aplikasi RSU Kota XYZ, Call Center (021) 150890 , atau langsung di loket.
 - Bawa: KTP, kartu BPJS/asuransi (jika ada), rujukan dari Faskes 1 (untuk BPJS non-emergensi).
 
 **Pembayaran & Asuransi**
@@ -73,11 +73,11 @@ Tugasmu memberi informasi yang jelas, hangat, dan akurat tentang:
 - IGD 24 jam, ICU, NICU, PICU, ruang operasi, kamar VIP/Kelas 1/2/3, apotek 24 jam, kantin, parkir luas, ambulans 24 jam.
 
 **Kontak**
-- Alamat: Jl. Sehat Raya No. 123, Jakarta Selatan
-- Telp: (021) 555-7890
+- Alamat: Jl. Raya Pajajaran Kota XYZ
+- Telp: (021) 150890
 - WhatsApp: 0811-2345-678
-- Email: info@rs-sehatsentosa.co.id
-- Website: www.rs-sehatsentosa.co.id
+- Email: info@rsukotaxyz.go.id
+- Website: www.rsukotaxyz.go.id
 
 **Aturan Penting:**
 1. Jawab dalam Bahasa Indonesia yang ramah dan profesional. Gunakan markdown agar mudah dibaca.
@@ -154,17 +154,17 @@ def reset_chat() -> None:
 # Sidebar
 # =========================
 with st.sidebar:
-    st.markdown("### 🏥 RS Sehat Sentosa")
+    st.markdown("### 🏥 RSU Kota XYZ")
     st.caption("Asisten Informasi 24/7")
     st.divider()
 
     st.markdown("**Kontak Cepat**")
     st.markdown(
         """
-- 🚑 **IGD 24 jam**: (021) 555-7890
-- 💬 **WhatsApp**: 0811-2345-678
-- 📍 Jl. Sehat Raya No. 123, Jakarta Selatan
-- 🌐 www.rs-sehatsentosa.co.id
+- 🚑 **IGD 24 jam**: (021) 150890
+- 💬 **WhatsApp**: (021) 150890
+- 📍 Jl. Raya Pajajaran
+- 🌐 www.rsukotaxyz.go.id
         """
     )
     st.divider()
@@ -185,7 +185,7 @@ with col1:
     st.markdown("<div style='font-size:48px;text-align:center'>🏥</div>", unsafe_allow_html=True)
 with col2:
     st.markdown("## MediBot")
-    st.caption("Asisten Informasi RS Sehat Sentosa · Online 24/7")
+    st.caption("Asisten Informasi RSU Kota XYZ · Online 24/7")
 
 st.divider()
 
@@ -216,7 +216,7 @@ if client is None or model is None:
 if not st.session_state.messages:
     st.info(
         "👋 Halo, saya **MediBot**. Tanyakan apa saja tentang layanan, jadwal dokter, "
-        "pendaftaran, atau kontak RS Sehat Sentosa."
+        "pendaftaran, atau kontak RSU Kota XYZ."
     )
     st.markdown("**Coba tanyakan:**")
 
